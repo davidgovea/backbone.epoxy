@@ -6,16 +6,13 @@
 // http://epoxyjs.org
 
 (function(root, factory) {
-	
-	var backbone = 'backbone';
-	var underscore = 'underscore';
-	
+
 	if (typeof exports !== 'undefined') {
 		// Define as CommonJS export:
-		module.exports = factory(require(underscore), require(backbone));
+		module.exports = factory(require('underscore'), require('backbone'));
 	} else if (typeof define === 'function' && define.amd) {
 		// Define as AMD:
-		define([underscore, backbone], factory);
+		define(['underscore', 'backbone'], factory);
 	} else {
 		// Just run it:
 		factory(root._, root.Backbone);
